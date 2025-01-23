@@ -19,7 +19,7 @@
         <nav>
             <ul class="list-links">
                 <li>
-                    <a href="#">Publicar</a>
+                    <a href="#" class="list-links-button">Publicar</a>
                 </li>
                 <li>
                     
@@ -49,6 +49,47 @@
             </ul>
         </nav>
     </aside>
+
+    <main>
+        <div class="container-upload-image">
+            <div class="container-image">
+                <img src="./img/imagem1.png" alt="" class="main-image">
+            </div>
+            <button>Carregar Image</button>
+            <div class="container-image-name">
+                <p>image_projeto.png</p>
+                <img src="./img/close.svg" alt="">
+            </div>
+        </div>
+        <div class="container-description">
+            <h2>Novo Projeto</h2>
+            <form>
+                <div>
+                    <label for="name">Nome do Projeto</label>
+                    <input type="text" id="name" name="name" />
+                </div>
+                <div>
+                    <label for="description">Descrição</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <div>
+                    <label for="category">Tags</label>
+                    <input type="text" id="category" name="category" />
+                </div>
+                <ul class="list-tags">
+                    <li>
+                        <p>Front-end</p>
+                        <img src="./img/close-black.svg" alt="">
+                    </li>
+                </ul>
+                <div class="container-buttons">
+                    <button class="button-discard">Descartar</button>
+                    <button class="button-publish">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 
