@@ -20,3 +20,19 @@ function readFileContent (file) {
         reader.readAsDataURL(file)
     })
 }
+const mainImage = document.querySelector(".main-image")
+const imageName = document.querySelector(".container-image-name p")
+
+inputUpload.addEventListener("change", async (e) => {
+    const file = e.target.files[0]
+
+    if (file) {
+        try {
+            const fileContent = await readFileContent(file)
+        mainImage.src = fileContent.url
+        imageName.textContent = fileContent.name
+        } catch (error){
+            console.log("Erro na leitura do arquivo")
+        }
+    }
+})
