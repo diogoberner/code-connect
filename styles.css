@@ -121,6 +121,7 @@ textarea {
 
 .list-tags {
     display: flex;
+    gap: 10px;
 }
 
 .container-buttons {
