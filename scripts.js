@@ -40,19 +40,38 @@ inputUpload.addEventListener("change", async (e) => {
 const tagsInput = document.querySelector("#category")
 const tagsList = document.getElementById("list-tags")
 
-tagsInput.addEventListener("keypress", (e) => {
+tagsList.addEventListener("click", (e) => {
+    if (e.target.classList.contains("remove-tag")) {
+        const removeTag = e.target.parentElement
+        tagsList.removeChild(removeTag)
+    }
+})
+
+const avaliableTags = ["Front-End", "Back-End", "Full-Stack", "Programming", "HTML", "CSS", "JavaScript", "Data Science", "AI", "Java", "Python", "Ruby", "React", "Angular", "VueJS", "JSON"]
+
+async function checkAvaliableTags(textTag) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(avaliableTags.includes(textTag))
+        }, 1000)
+    })    
+}
+
+tagsInput.addEventListener("keypress", async (e) => {
     
     if (e.key === "Enter"){
         e.preventDefault()
         const tagText = tagsInput.value.trim()
-        if (tagText !== "") {
+
+        
+        if (await checkAvaliableTags(tagText)) {
             const newTag = document.createElement("li")
             newTag.innerHTML = `<p>${tagText}</p> <img src="./img/close-black.svg" class="remove-tag" />`
             tagsList.appendChild(newTag)
             tagsInput.value = ""
+        } else {
+            console.log("Tag não permitida!")
+            tagsInput.value = ""
         }
-
     }
-    
-
 })
