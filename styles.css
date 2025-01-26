@@ -32,30 +32,30 @@ aside {
     background-color: var(--items-background);
     border-radius: 10px;
     height: 100%;
-    padding: 40px 16px;
+    padding: 20px 16px;
     text-align: center;
 }
 
 .list-links {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 80px;
+    gap: 20px;
+    margin-top: 20px;
     align-items: center;
     list-style-type: none;
 }
 
-.list-links a{
+.list-links a {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 22px;
+    font-size: 18px;
 }
 
-.list-links li:first-of-type a{
+.list-links li:first-of-type a {
     color: var(--primary-color);
 }
 
@@ -65,7 +65,7 @@ aside {
     border-radius: 8px;
 }
 
-main{
+main {
     background-color: var(--items-background);
     border-radius: 10px;
     padding: 32px;
@@ -73,16 +73,16 @@ main{
     gap: 24px;
 }
 
-h2{
+h2 {
     font-size: 26px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: 600;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 form div label {
@@ -92,7 +92,8 @@ form div label {
     margin-bottom: 8px;
 }
 
-form div input, textarea {
+form div input,
+textarea {
     width: 100%;
     padding: 8px 16px;
     background-color: var(--secondary-color);
@@ -107,10 +108,10 @@ form div input {
 }
 
 textarea {
-    height: 161px;
+    height: 150px;
 }
 
-.list-tags li{
+.list-tags li {
     display: flex;
     background-color: var(--secondary-color);
     color: var(--background-color);
@@ -234,6 +235,3 @@ textarea {
     color: var(--secondary-color);
     font-size: 15px;
 }
-
-
-

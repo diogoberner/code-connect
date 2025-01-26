@@ -101,21 +101,39 @@ async function publishProject(projectName, projectDesc, projectTags) {
 }
 
 publishBtn.addEventListener("click", async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const name = document.getElementById("name").value
-    const description = document.getElementById("description").value
-    const tags = Array.from(tagsList.querySelectorAll("p")).map((tag) => tag.textContent)
+    const name = document.getElementById("name").value.trim();
+    const description = document.getElementById("description").value.trim();
+    const tags = Array.from(tagsList.querySelectorAll("p")).map((tag) => tag.textContent);
+
+    const validations = [
+        { condition: name === "", message: "Você precisa dar um nome para o projeto!" },
+        { condition: description === "", message: "Você precisa descrever o projeto!" },
+        { condition: tags.length === 0, message: "Você precisa adicionar pelo menos uma tag!" },
+    ];
+
+    // Filtrar todas as condições que falharam
+    const failedValidations = validations.filter((validation) => validation.condition);
+
+    if (failedValidations.length > 0) {
+        // Gerar uma mensagem consolidada
+        const errorMessage = failedValidations.map((validation) => validation.message).join("\n");
+        alert(errorMessage);
+        return;
+    }
 
     try {
-        const result = await publishProject(name, description, tags)
-        console.log(result)
-        alert("Deu tudo certo!")
+        const result = await publishProject(name, description, tags);
+        console.log(result);
+        alert("Deu tudo certo!");
     } catch (error) {
-        console.log("Deu errado: ", error)
-        alert("Deu errado!")
+        console.log("Deu errado: ", error);
+        alert("Deu errado!");
     }
-})
+});
+
+
 
 const discardBtn = document.querySelector(".button-discard")
 
